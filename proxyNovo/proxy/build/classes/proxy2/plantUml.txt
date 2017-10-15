@@ -1,0 +1,28 @@
+@startuml
+interface ObjetoGrafico <<Subject>>{
+   ObjetoGrafico : getObjeto()
+   int :getWidth()
+   int : getHeight()
+   void: show()
+}
+
+class Imagem <<RealSubject>>{
+   - Icon: imagem
+   - String : nome
+}
+
+
+class ImagemProxy <<Proxy>>{
+   - Strin : nome
+   - ObjetoGrafico : imagem 
+}
+
+
+class Cliente <<cliente>>{
+
+}
+
+Cliente --> ObjetoGrafico
+ObjetoGrafico <|.. ImagemProxy
+ObjetoGrafico <|.. Imagem
+@enduml
