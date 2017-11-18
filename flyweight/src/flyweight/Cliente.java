@@ -19,7 +19,7 @@ public class Cliente {
         
         Runtime teste = Runtime.getRuntime();
         
-        FactoryUrna criador = new FactoryUrna();
+        FlyweightPool criador = new FlyweightPool();
         
         List<Urna> lista = new ArrayList<Urna>();
         

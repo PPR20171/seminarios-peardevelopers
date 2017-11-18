@@ -8,24 +8,34 @@ package flyweight;
 import java.io.File;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+
 /**
  *
  * @author Usuário
+ * 
+ * Classe abstrata que representa um flyweight de Urna com o estado intrinseco imagem e valor
+ * 
  */
-public class Urna {
+public abstract class Urna {
+
     
-    private Icon imagem;
     
-    public Urna(){
-        File file = new File("imagens//imagem.jpg");
-        imagem = new ImageIcon(file.getPath());
+    protected Icon imagem;
+    protected int valor;
+
+
+    public void imprimirLocalizacao(Localizacao localizacao) {
+        System.out.println("Coordenadas da urna: x: " + localizacao.getX() + " y: " + localizacao.getY());
     }
     
-    public void imprimirLocalizacao(Localizacao localizacao){
-        System.out.println("Coordenadas da urna: x: "+localizacao.getX()+" y: "+localizacao.getY());
-    }
-    
-    public Icon getImagem(){
+
+    public Icon getImagem() {
         return imagem;
     }
+
+    public int getValor() {
+        return valor;
+    }
+    
+    
 }
